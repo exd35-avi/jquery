@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FILE</title>
+
+    <!-- downloaded version -->
+    <script src="jquery-3.6.3.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button>click me to add class</button>
+    
+    <!-- <button>click me to add class</button>
+    <div id="mydiv">Note: Just get the fuck out of here<br>
+                                        Note: Just get the fuck out of here<br>
+                                        Note: Just get the fuck out of here<br>
+    </div> -->
+    <!-- <input type="text" name="inp" /> -->
+
+    <!-- <span id="focusid">Welcome</span>
+    <span id="blurid">Take care</span>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, alias? Eum,
+      velit ipsum delectus incidunt, accusantium perspiciatis dolorum earum
+      minima recusandae quidem, quam doloribus culpa ipsa porro hic consequatur
+      omnis! Adipisci, est?
+    </p> --> -->
+
+    <!-- <ul>
+        <li>Avirup</li>
+        <li>Mazumder</li>
+    </ul>
+
+    <ol>
+        <li>Avirup</li>
+        <li>Mazumder</li>
+    </ol> -->
+
+    <!-- <div class="ancestors">
+        <div style="width:500px;">div (great-grandparent)
+          <ul>ul (grandparent)  
+            <li>li (direct parent)
+              <span>span</span>
+            </li>
+          </ul>   
+        </div>
+      
+        <div style="width:500px;">div (grandparent)   
+          <p>p (direct parent)
+            <span>span</span>
+          </p> 
+        </div>
+      </div> -->
+  </body>
+
+  <script>
+    // using button
+    // $(document).ready(function () {
+    //     $('button').click(function(){
+    //         // alert('My first jquery');
+    //     });
+    // });
+
+    // using id
+    // $(document).ready(function(){
+    //     $('button').click(function(){
+    //         $('#mydiv').toggle(1000);   // 1 sec animation toggle: on-off
+    //     });
+    // });
+
+    // using class          (toggle is a mixture of show and hide)
+    // $(document).ready(function(){
+    //     $('button').click(function(){
+    //         $('.container').toggle(1000);   // 1 sec animation
+    //     });
+    // });
+
+    // $(document).ready(function(){
+    //     $('button').dblclick(function(){
+    //         $('.container').toggle(1000);   // 1 sec animation
+    //     });
+    // });
+
+    // $(document).ready(function(){
+    //     $('button').mouseenter(function(){
+    //         $('.container').toggle(1000);   // 1 sec animation
+    //     });
+    // });
+
+    // $(document).ready(function(){
+    //     $('button').mouseleave(function(){
+    //         $('.container').toggle(1000);   // 1 sec animation
+    //     });
+    // });
+
+    // $(document).ready(function(){
+    //     $('input').keypress(function(){
+    //         alert('this is keyboard event');
+    //         console.log('this is keyboard event');
+    //     });
+    // });
+
+    // $(document).ready(function(){
+    //     $('input').keyup(function(){
+    //         alert('this is keyboard event');
+    //         console.log('this is keyboard event');
+    //     });
+    // });
+
+    // $(document).ready(function(){
+    //     $('input').keydown(function(){
+    //         alert('this is keyboard event');
+    //         console.log('this is keyboard event');
+    //     });
+    // });
+
+    // Multiple Effects
+    // $(document).ready(function () {
+    //   // $('input').focus(function() {
+
+    //   //     alert('this is keyboard event');
+    //   //     console.log('this is keyboard event');
+    //   // });
+
+    //   $("span").hide();
+
+    //   $("input").focus(function () {
+    //     $("#focusid").show().fadeOut(3000);
+    //   });
+
+    //   $("input").blur(function () {
+    //     $("#blurid").show().fadeOut(3000);
+    //   });
+    // });
+
+    // handle multiple events
+    // $(document).ready(function(){
+    //     $('p').on({
+    //         mouseenter: function(){
+    //             $(this).css({
+    //                     "color": "black",
+    //                     "background-color": "white"
+    //                 });
+    //         },
+    //         mouseleave: function(){
+    //             $(this).css({
+    //                     "color": "blue",
+    //                     "background-color": "pink"
+    //                 });
+    //         },
+    //         click: function(){
+    //             alert('This is the way to handle multiple events')
+    //         }
+    //     });
+    // });
+
+    // Append in ul list 
+    // $(document).ready(function(){
+    //     $('button').click(function(){
+    //         $('ul').append('<li>Special</li>');     // will add after
+    //     });
+    // });
+
+    // // prepend in ol list 
+    // $(document).ready(function(){
+    //     $('button').click(function(){
+    //         $('ol').prepend('<li>Special</li>');    // will add at front
+    //     });
+    // });
+
+    // $(document).ready(function(){
+    //     $('button').click(function(){
+    //         $('#mydiv').remove();        // remove only the whole DOM
+    //     });
+    // });
+
+    // $(document).ready(function(){
+    //     $('button').click(function(){
+    //         $('#mydiv').empty();     // remove only the clid elements
+    //     });
+    // });
+
+    // $(document).ready(function(){
+    //     $('button').click(function(){
+    //         $('#mydiv').addClass('addClass')        // remove only the whole DOM
+    //     });
+    // });
+
+    // $(document).ready(function(){
+    //     $('button').dblclick(function(){
+    //         $('#mydiv').removeClass('addClass')        // remove only the whole DOM
+    //     });
+    // });
+
+    $(document).ready(function(){
+        $('button').click(function(){
+            $("span").parent().css({"color": "red", "border": "2px solid red"});
+        });        
+    });
+
+  </script>
+</html>

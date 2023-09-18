@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+}
+
+#mydiv{
+    /* border: 2px solid red;
+    background-color: green;
+    color: whitesmoke; */
+    /* height: 50px; */
+
+}
+
+.addClass{
+    border: 2px solid red;
+    background-color: peru;
+    color: whitesmoke;
+    height: 100px;
+}
