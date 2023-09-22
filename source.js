@@ -1,67 +1,3 @@
-// $(document).ready(function (e) {
-
-//     // e.preventDefault();
-//     console.log('hii')
-//     $('#submit').click(function () {
-
-//         var user = $('#first_name').val()
-//         console.log(user)
-
-//         var password = $('#password').val()
-//         console.log(password)
-
-//         var email= $('#email').val()
-//         console.log(email)
-
-//         var langArray = email.split('@').val()
-//         console.log(langArray)
-
-//         $("#first_name").hide();
-//         $("#email").hide();
-//         $("#password").hide();
-
-//         if ($("#first_name").val().length < 1) {
-//             // console.log(text);
-//             $("#first_name").show();
-//             // $("#txt").focus();
-//             return false;
-//           } else if (email.length < 1) {
-//             $("#first_name").hide();
-//             $("#email").show();
-//             $("#email").focus();
-//             return false;
-//           }  else if (password.length < 1) {
-//             // console.log(text);
-//             $("#email").hide();
-//             $("#password").show();
-//             // $("#rollno").focus();
-//             $("#password").hide(3000);
-//             return false;
-//           }
-
-//         // username should not be empty
-//         // if (user.length == 0) {
-//         //     $('#show_error').html('***The username should be filled***');
-//         //     $('#show_error').css({ 'color': 'red' });
-//         //     return false;
-//         // }
-
-//         // // password length
-//         // if (password.length <= 5) {
-//         //     $('#show_error').html('***Password must be minimum 6 characters***');
-//         //     $('#show_error').css({ 'color': 'red' });
-//         //     return false;
-//         // }
-
-//         // // email consisting '@ symbol
-//         // if (langArray.length < 2) {
-//         //     $('#show_error').html('***Email should contains @ symbol***')
-//         //     $('#show_error').css({ 'color': 'red' });
-//         //     return false;
-//         // }        
-//     });
-// });
-
 $(document).ready(function () {
     $('#first_form').submit(function () {
         var first_name = $('#first_name').val();
@@ -73,12 +9,10 @@ $(document).ready(function () {
         var password = $('#password').val();
         var adrs = $('#address').val();
 
-        var img_name = $('#file').val()
-        var dotind = str.charAt('.')
+        // var img_name = $('#file').val()
+        // var dotind = str.charAt('.')
 
-        // console.log(password);
-        var img_extension = img_name.substring(dotind, img_extension.length).toLowerCase();
-        console.log(img_extension);
+        // var img_extension = img_name.substring(dotind, img_extension.length).toLowerCase();
 
         // first name checking
         if (first_name.length < 1) {    // if length is empty
@@ -170,6 +104,12 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    $("#all").click(function () {
+        ("input[type=checkbox]").prop("checked", ("#all").is(":checked"))
+    })
+})
+
 
 // data editing from edit list view to edit view
 $(document).ready(function () {
@@ -194,27 +134,68 @@ $(document).ready(function () {
         $('#phone').val(ph);
         $('#email').val(mail);
         $('#address').val(getaddress);
-        $('#list_view').hide();
-        $('#first_form').show();
 
-        console.log(col1 + "\n" + col2 + "\n" + col3 + "\n" + col4 + "\n" + col5 + "\n" + col6 + "\n" + col7);
+        // $('#list_view').hide();         // listing page will be hidden
+        // $('#first_form_body').show();   // edit form will be shown
+
     });
 });
 
 // show and hide operation
-// $(document).ready(function () {
-//     $('#list_view').hide();
-//     $('#first_form').hide();
+$(document).ready(function () {
 
-//     $('.add-new').click(function () {
-//         $('#list_view').hide();
-//         $('#first_form').show();
-//     });
+    // initially both the forms will be hidden
+    $('#first_form_body').hide();
+    $('#list_view').hide();
 
-//     $('.hide').click(function () {
-//         console.log('showing')
-//         $('#first_form').hide();
-//         $('#list_view').show();
-//     });
-// });
+    $('.add-new').click(function () {       // if add-new clicked new form will show and listing page will be hidden
+        $('#first_form_body').show();
+        $('#list_view').show();
+    });
 
+    // if hide clicked new form will be hidden and listing page will be shown
+
+
+});
+
+$(document).ready(function () {
+    $('.person.this.td:eq(0)').mouseover(function () {
+        var currentRow = $(this).closest('tr');
+        var f_n = currentRow.find("td:eq(1)").html();
+        var l_n = currentRow.find("td:eq(2)").html();
+        var coun = currentRow.find("td:eq(3)").html();
+        var gend = currentRow.find("td:eq(4)").html();
+        var dobirth = currentRow.find("td:eq(5)").html();
+        var ph = currentRow.find("td:eq(6)").html();
+        var mail = currentRow.find("td:eq(7)").html();
+        var getaddress = currentRow.find("td:eq(8)").html();
+        var obj = {
+            'first_name': f_n,
+            'last_name': l_n,
+            'country': coun,
+            'gender': gend,
+            'dateofBirth': dobirth,
+            'phone': ph,
+            'email': mail,
+            'address': getaddress
+        }
+
+        console.log(obj)
+    });
+
+
+    // var currentRow = $(this).closest('tr')
+    // console.log(currentRow)
+    // // fetch all the col value of that particular current row
+    // var f_n = currentRow.find("td:eq(0)").html();
+    // // console.log(f_n)
+    // var l_n = currentRow.find("td:eq(1)").html();
+    // var coun = currentRow.find("td:eq(2)").html();
+    // var gend = currentRow.find("td:eq(3)").html();
+    // var dobirth = currentRow.find("td:eq(4)").html();
+    // var ph = currentRow.find("td:eq(5)").html();
+    // var mail = currentRow.find("td:eq(6)").html();
+    // var getaddress = currentRow.find("td:eq(7)").html();
+
+
+})
