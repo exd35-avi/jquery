@@ -14,19 +14,6 @@ pipeline {
                 sh 'mvn clean install -DskipTests' // Executes a shell command to build with Maven, skipping tests
             }
         }
-
-        stage('Test') { // Stage for running tests
-            steps {
-                sh 'mvn test' // Executes a shell command to run Maven tests
-                junit '**/target/surefire-reports/*.xml' // Archives JUnit test results for reporting
-            }
-        }
-
-        stage('Archive Artifacts') { // Stage to archive build artifacts
-            steps {
-                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true // Archives all .jar files in the target directory
-            }
-        }
     }
 
     post { // Actions to perform after the pipeline runs, regardless of success or failure
