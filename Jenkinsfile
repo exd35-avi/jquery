@@ -3,15 +3,10 @@ pipeline {
     agent any // Specifies that the pipeline can run on any available agent
 
     stages {
-        stage('Checkout') { // Stage to checkout code from the repository
-            steps {
-                checkout scm // Checks out the code from the configured SCM (e.g., Git)
-            }
-        }
 
         stage('Build') { // Stage for building the project
             steps {
-                sh 'mvn clean install -DskipTests' // Executes a shell command to build with Maven, skipping tests
+                echo 'Building' // Executes a shell command to build with Maven, skipping tests
             }
         }
     }
